@@ -1,6 +1,4 @@
-import React from 'react'
-import Paciente from './paciente'
-
+import Paciente from "./Paciente"
 
 
 const ListadoPacientes = ({pacientes, setPaciente, eliminarPaciente}) => {
