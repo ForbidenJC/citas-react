@@ -1,0 +1,103 @@
+import { useState, useEffect } from 'react'
+import './App.css'
+import { Header } from './components/Header'
+import ListaPokemon from './components/ListaPokemon'
+
+
+
+function App() {
+  return (
+    <div className='font-rubik text-black'>
+        <Header/>
+        <ListaPokemon/>
+    </div>
+  )
+}
+
+export default App
+
+import { useState, useEffect } from 'react';
+import Pokemon from './Pokemon';
+
+const ListaPokemon = () => {
+  const [pokemonList, setPokemonList] = useState([]);
+
+  const agregar = async () => {
+    const newPokemonList = [];
+
+    for (let i = 1; i <= 151; i++) {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+      const data = await response.json();
+      newPokemonList.push(data);
+    }
+
+    setPokemonList(newPokemonList);
+  };
+
+  useEffect(() => {
+    agregar(); // Llamamos a la función agregar al montar el componente
+  }, []);
+
+  return (
+    <main className='p-8 max-w-5xl mx-auto'>
+      <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4'>
+        {pokemonList.map((pokemon) => (
+         <Pokemon
+         key={pokemon.id}
+         id={pokemon.id}
+         name={pokemon.name}
+         types={pokemon.types}
+         height={pokemon.height}
+         weight={pokemon.weight}
+         imageUrl={pokemon.imageUrl}
+       />
+     ))}
+   </div>
+ </main>
+);
+};
+
+export default ListaPokemon;
+
+import React from 'react';
+
+const Pokemon = ({ id, name, types, height, weight, imageUrl }) => {
+  return (
+    <div className='rounded-2xl bg-white shadow-2xl py-4 uppercase relative isolate overflow-hidden'>
+      <p className='absolute top-4 left-1/2 -translate-x-1/2 text-8xl font-extrabold text-fondo -z-10'>
+        #{id.toString().padStart(3, '0')}
+      </p>
+      <div className='px-4 flex justify-center'>
+        <img className='w-full max-w-6rem' src={imageUrl} alt={`${name} art`} />
+      </div>
+      <div className='flex flex-col gap-2 px-4 items-center text-center'>
+        <div className='flex items-center gap-x-1 flex-wrap justify-center'>
+          <p className='bg-fondo py-1 px-2 rounded-100vmax text-xs font-medium'>
+            #{id.toString().padStart(3, '0')}
+          </p>
+          <h2 className='font-bold text-base'>{name}</h2>
+        </div>
+        <div className='flex gap-2 text-xs font-bold flex-wrap justify-center'>
+          {types.map((type, index) => (
+            <p key={index} className={`bg-${type} px-2 py-1 rounded-100vmax`}>
+              {type.toUpperCase()}
+            </p>
+          ))}
+        </div>
+        <div className='flex gap-4 text-sm'>
+          <p className='py-1 rounded-100vmax bg-fondo'>{`${height}m`}</p>
+          <p className='py-1 rounded-100vmax bg-fondo'>{`${weight}kg`}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Pokemon;
+
+
+
+
+
+
+

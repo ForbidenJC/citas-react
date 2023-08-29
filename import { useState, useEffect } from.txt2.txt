@@ -1,0 +1,32 @@
+import { useState, useEffect } from 'react'
+import React from 'react'
+
+const Pokemon = () => {
+  return (
+    <div className='rounded-2xl bg-white shadow-2xl py-4 uppercase relative isolate overflow-hidden' >
+      <p className='absolute top-4 left-1/2 -translate-x-1/2 text-8xl font-extrabold text-fondo -z-10'>#025</p>
+      <div className='px-4 flex justify-center'>
+      <img className='w-full max-w-6rem' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="bulbasaur art" />
+      </div>
+      <div  className='flex flex-col gap-2 px-4 items-center text-center'>
+        <div className='flex items-center gap-x-1 flex-wrap justify-center'>
+        <p className='bg-fondo py-1 px-2 rounded-100vmax text-xs font-medium'>#001</p>
+       <h2 className=' font-bold text-base'>BULBASAUR</h2>
+       </div>
+      <div className='flex gap-2 text-xs font-bold flex-wrap justify-centerr'>
+      <p className='bg-grass px-2 py-1 rounded-100vmax'>GRASS</p>
+      <p className='bg-poison px-2 py-1 rounded-100vmax'>POISON</p>
+      </div>
+      <div className='flex gap-4 text-sm'>
+        <p className='py-1 rounded-100vmax bg-fondo'>0.7m</p>
+        <p className='py-1 rounded-100vmax bg-fondo'>6.9kg</p>
+      </div>
+
+      </div>
+    
+      
+     </div>
+  )
+}
+
+export default Pokemon
