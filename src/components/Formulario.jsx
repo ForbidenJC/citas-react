@@ -4,6 +4,7 @@ import Error from './Error';
 
 export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => {
     const [nombre, setNombre] = useState('');
+    const [tipo, setTipo] = useState('');
     const [propietario, setPropietario] = useState('');
     const [email, setEmail] = useState('');
     const [fecha, setFecha] = useState('');
@@ -16,6 +17,7 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
     useEffect(()=>{
         if((Object.keys(paciente).length>0)){
             setNombre(paciente.nombre)
+            setTipo(paciente.tipo)
             setPropietario(paciente.propietario)
             setEmail(paciente.email)
             setFecha(paciente.fecha)
@@ -38,7 +40,7 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
         e.preventDefault()
         
         //validacion de formulario
-        if(nombre === '' || propietario === '' || email === '' || fecha === '' || sintomas === ''){
+        if(nombre === '' || tipo === ''  ||propietario === '' || email === '' || fecha === '' || sintomas === ''){
             console.log('hay al menos un campo vacio');
             setError(true)
             return;
@@ -48,6 +50,7 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
         //Objeto Paciente
         const ObjetoPaciente={
             nombre, 
+            tipo,
             propietario, 
             email, fecha, 
             sintomas
@@ -73,6 +76,7 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
 
         //Reiniciar el formulario
         setNombre('')
+        setTipo('')
         setPropietario('')
         setEmail('')
         setFecha('')
@@ -95,6 +99,10 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
             <div className='mb-5'>
                 <label htmlFor='mascota' className='block text-gray-700 font-bold uppercase'>Nombre Mascota</label>
                 <input id='mascota' type="text" placeholder='Nombre de la Mascota' className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md' value={nombre} onChange={ (e) => setNombre(e.target.value)} />
+            </div>
+            <div className='mb-5'>
+                <label htmlFor='mascota' className='block text-gray-700 font-bold uppercase'>Tipo de Mascota</label>
+                <input id='mascota' type="text" placeholder='Ingrese el tipo de Mascota' className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md' value={tipo} onChange={ (e) => setTipo(e.target.value)} />
             </div>
             <div className='mb-5'>
                 <label htmlFor='propietario' className='block text-gray-700 font-bold uppercase'>Nombre Propietario</label>
