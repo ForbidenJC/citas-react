@@ -4,7 +4,7 @@ import Error from './Error';
 
 export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => {
     const [nombre, setNombre] = useState('');
-    const [tipo, setTipo] = useState([]);
+    const [tipo, setTipo] = useState('Canino');
     const [propietario, setPropietario] = useState('');
     const [email, setEmail] = useState('');
     const [fecha, setFecha] = useState('');
@@ -43,7 +43,7 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
         e.preventDefault()
         
         //validacion de formulario
-        if(nombre === '' || tipo === ''  ||propietario === '' || email === '' || fecha === '' || sintomas === '' || tratamiento === ''){
+        if(nombre === '' || tipo === '' ||propietario === '' || email === '' || fecha === '' || sintomas === '' || tratamiento === ''){
             console.log('hay al menos un campo vacio');
             setError(true)
             return;
@@ -107,7 +107,7 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
             </div>
             <div className='mb-5 '>
                     <label htmlFor='tipo' className='block text-gray-700 font-bold uppercase'>Tipo de Mascota</label>
-                    <select  id='tipo' className='w-[100%] p-1 bg-gray-100' value={tipo} onChange={(e) => setTipo(Array.from(e.target.selectedOptions, option => option.value))}>
+                    <select   id='tipo' className='w-[100%] p-1 bg-gray-100' value={tipo} onChange={(e) => setTipo(Array.from(e.target.selectedOptions, option => option.value))}>
                         <option value='canino'>Canino</option>
                         <option value='felino'>Felino</option>
                         <option value='bovino'>Bovino</option>
