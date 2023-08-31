@@ -5,7 +5,7 @@ export default {
     extend: {
 
       backgroundImage: {
-        'pet-bg': 'url(../assets/Fondo.jpg)'
+        'pet-bg': 'url(https://pixabay.com/illustrations/dog-pawprint-tracks-background-pet-19812/)'
       }
     },
   },
