@@ -103,7 +103,9 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
             {error && <Error><p>Todos los Campos son Obligatorios</p></Error>}
             <div className='mb-5'>
                 <label htmlFor='mascota' className='block text-gray-700 font-bold uppercase'>Nombre Mascota</label>
-                <input id='mascota' type="text" placeholder='Nombre de la Mascota' className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md' value={nombre} onChange={ (e) => setNombre(e.target.value)} />
+                <input id='mascota' type="text" placeholder='Nombre de la Mascota' className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md' value={nombre} onChange={ (e) => setNombre(e.target.value)} 
+                ref={(input) => input && paciente.id && input.focus()}
+                />
             </div>
             <div className='mb-5 '>
                     <label htmlFor='tipo' className='block text-gray-700 font-bold uppercase'>Tipo de Mascota</label>
