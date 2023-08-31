@@ -5,6 +5,7 @@ import './App.css'
 import Header from './components/Header'
 import { Formulario } from './components/Formulario'
 import ListadoPacientes from './components/ListadosPacientes'
+import fondo from '../assets/fondo.jpg'
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto mt-20">
+   
+       <div className="container mx-auto mt-20">
       <Header />
 
       <div className="mt-12 md:flex">
@@ -40,6 +42,10 @@ function App() {
       </div>
 
     </div>
+
+
+    
+   
   )
 }
 

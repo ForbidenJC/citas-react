@@ -3,7 +3,7 @@
 
 const Paciente = ({paciente, setPaciente, eliminarPaciente}) => {
 
-  const {nombre, tipo, propietario, email, fecha, sintomas, id}=paciente
+  const {nombre, tipo, propietario, email, fecha, sintomas, tratamiento, id}=paciente
 
   const handleEliminar =()=>{
     const respuesta = confirm('Deseas eliminar al Paciente?')
@@ -17,7 +17,7 @@ const Paciente = ({paciente, setPaciente, eliminarPaciente}) => {
         <span className='font-normal normal-case'>{nombre}</span>
          </p>
          <p className='font-bold mb-3 text-gray-700 uppercase'>Tipo: {''} 
-        <span className='font-normal normal-case'>{tipo}</span>
+        <span className='font-normal capitalize'>{tipo}</span>
          </p>
          <p className='font-bold mb-3 text-gray-700 uppercase'>Propietario: {''} 
         <span className='font-normal normal-case'>{propietario}</span>
@@ -30,6 +30,9 @@ const Paciente = ({paciente, setPaciente, eliminarPaciente}) => {
          </p>
          <p className='font-bold mb-3 text-gray-700 uppercase'>Sintomas: {''} 
         <span className='font-normal normal-case'>{sintomas}</span>
+         </p>
+         <p className='font-bold mb-3 text-gray-700 uppercase'>Tratamiento: {''} 
+        <span className='font-normal normal-case'>{tratamiento}</span>
          </p>
 
           <div className='flex justify-between mt-10'>

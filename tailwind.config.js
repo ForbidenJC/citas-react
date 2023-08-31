@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{html,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+
+      backgroundImage: {
+        'pet-bg': 'url(../assets/Fondo.jpg)'
+      }
+    },
   },
   plugins: [],
 }

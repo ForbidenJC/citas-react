@@ -2,9 +2,9 @@ function Header(){
 
     return(
         
-            <h1 className="font-black text-5xl text-center md:w-2/3 mx-auto">
-                Seguimiento Pacientes {''} Con Github {''}
-                <span className="text-indigo-600">Veterinaria</span>
+            <h1 className="font-extrabold text-5xl text-center md:w-2/3 mx-auto">
+                Seguimiento Pacientes {''} Clinica Veterinaria {''}
+                <span className="text-indigo-600">Brenda Ayerdis</span>
             </h1>
         
         
