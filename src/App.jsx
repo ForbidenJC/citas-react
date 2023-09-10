@@ -38,6 +38,8 @@ function App() {
             pacientes={pacientes}
             setPaciente={setPaciente}
             eliminarPaciente={eliminarPaciente}
+            paciente={paciente}
+            
           />
       </div>
 

@@ -10,6 +10,7 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
     const [fecha, setFecha] = useState('');
     const [sintomas, setSintomas] = useState('');
     const [tratamiento, setTratamiento] = useState('');
+    const [buscardor, Setbuscardor] = useState('')
 
     const [error, setError] = useState(false)
 
@@ -24,6 +25,7 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
             setFecha(paciente.fecha)
             setSintomas(paciente.sintomas)
             setTratamiento(paciente.tratamiento)
+            Setbuscardor(paciente.Setbuscardor)
 
         }
        
@@ -55,9 +57,11 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
             nombre, 
             tipo,
             propietario, 
-            email, fecha, 
+            email, 
+            fecha, 
             sintomas, 
-            tratamiento
+            tratamiento,
+            buscardor
            
         }
 
@@ -86,6 +90,7 @@ export const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => 
         setFecha('')
         setSintomas('')
         setTratamiento('')
+        Setbuscardor('')
         
     }
     
